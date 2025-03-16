@@ -70,7 +70,7 @@ const Navbar = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/login">
-              <Button variant="outline" size="sm" className="border-strato-blue text-white hover:bg-strato-blue/20">
+              <Button variant="outline" size="sm" className="border-strato-blue text-white bg-strato-blue/20 hover:bg-strato-blue/20">
                 <LogIn className="mr-2 h-4 w-4" />
                 Log In
               </Button>
@@ -116,7 +116,7 @@ const Navbar = () => {
             </nav>
             <div className="flex flex-col space-y-3 pt-2 pb-4 border-t border-white/10">
               <Link to="/login" className="w-full">
-                <Button variant="outline" className="w-full border-strato-blue text-white hover:bg-strato-blue/20">
+                <Button variant="outline" className="w-full border-strato-blue text-white bg-strato-blue/20 hover:bg-strato-blue/20">
                   Log In
                 </Button>
               </Link>

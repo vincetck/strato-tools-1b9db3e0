@@ -100,7 +100,27 @@ const Submit = () => {
     }
   };
   
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const sendApprovalEmail = async (values: z.infer<typeof formSchema>) => {
+    try {
+      // In a real implementation, you would send this to your backend
+      console.log(`Sending approval email to v.tueck09@gmail.com with tool: ${values.name}`);
+      
+      // This is just a simulation
+      // In a real app, you would implement this with an API call to your backend,
+      // which would then send an email using a service like SendGrid, Mailgun, etc.
+      
+      // For now we're just logging it to the console
+      const approvalLink = `https://strato-tools.com/admin/approve?tool=${encodeURIComponent(values.name)}`;
+      console.log(`Approval link: ${approvalLink}`);
+      
+      return true;
+    } catch (error) {
+      console.error("Error sending approval email:", error);
+      return false;
+    }
+  };
+  
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     if (!logoFile) {
       toast({
         title: "Logo required",
@@ -112,9 +132,14 @@ const Submit = () => {
     
     console.log("Form submitted:", values, "Logo:", logoFile);
     
+    // Send approval email
+    const emailSent = await sendApprovalEmail(values);
+    
     toast({
       title: "Tool submitted successfully!",
-      description: "We'll review your submission and get back to you soon.",
+      description: emailSent 
+        ? "We'll review your submission and get back to you soon. An approval notification has been sent."
+        : "We'll review your submission and get back to you soon.",
     });
     
     // Reset form
