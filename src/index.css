@@ -124,12 +124,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: theme('colors.secondary.DEFAULT');
+  background: theme('colors.strato.darkGray');
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.muted.foreground');
+  background: theme('colors.strato.lightGray');
   border-radius: 8px;
 }
 
@@ -154,4 +154,8 @@
 @keyframes slideUp {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+body {
+  @apply bg-strato-black;
 }
