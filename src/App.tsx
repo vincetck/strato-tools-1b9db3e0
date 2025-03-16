@@ -11,12 +11,14 @@ import Submit from "./pages/Submit";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
-// Create a client
+// Create a client with optimized configuration
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
-      retry: false,
+      retry: 1,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      cacheTime: 10 * 60 * 1000, // 10 minutes
     },
   },
 });

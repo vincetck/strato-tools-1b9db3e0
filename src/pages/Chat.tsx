@@ -5,7 +5,7 @@ import ChatInterface from '@/components/ChatInterface';
 import Footer from '@/components/Footer';
 
 const Chat = () => {
-  // Add padding to account for the fixed navbar
+  // Add padding to account for the fixed navbar and ensure chat is fully visible
   const [paddingTop, setPaddingTop] = useState('6rem');
 
   useEffect(() => {
@@ -25,8 +25,8 @@ const Chat = () => {
   return (
     <div className="flex flex-col min-h-screen bg-strato-black">
       <Navbar />
-      <main className="flex-1 overflow-hidden" style={{ paddingTop }}>
-        <div className="h-full flex flex-col">
+      <main className="flex-1 overflow-hidden flex flex-col" style={{ paddingTop }}>
+        <div className="h-full flex-1 flex flex-col">
           <ChatInterface />
         </div>
       </main>
