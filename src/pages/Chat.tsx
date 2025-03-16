@@ -26,7 +26,7 @@ const Chat = () => {
     <div className="flex flex-col min-h-screen bg-strato-black">
       <Navbar />
       <main className="flex-1 overflow-hidden" style={{ paddingTop }}>
-        <div className="h-full">
+        <div className="h-full flex flex-col">
           <ChatInterface />
         </div>
       </main>
